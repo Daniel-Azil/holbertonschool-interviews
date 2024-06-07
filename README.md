@@ -30,7 +30,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/holbertonschool-interviews.git
 cd holbertonschool-interviews
-
+```
 ## Running Code
 Each directory contains Python files and test cases. Navigate to the project folder to execute the main script and view results.
 
@@ -39,7 +39,7 @@ For example, to run `0x02-minimum_operations`:
 ```bash
 cd 0x02-minimum_operations
 python3 0-main.py
-
+```
 
 ---
 
