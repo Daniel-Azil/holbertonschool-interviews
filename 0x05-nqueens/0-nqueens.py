@@ -11,7 +11,9 @@ def check_attack(board, arg1, i):
         attacked by queens in the previous rows
     """
     for each_arg in range(arg1):
-        if(board[each_arg] == i or board[each_arg] + arg1 - each_arg == i or board[each_arg] + each_arg - arg1 == i):
+        if (board[each_arg] == i or
+                board[each_arg] + arg1 - each_arg == i or
+                board[each_arg] + each_arg - arg1 == i):
             return False
     return True
 
