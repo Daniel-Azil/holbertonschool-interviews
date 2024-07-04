@@ -1,46 +1,38 @@
+
 #!/usr/bin/python3
-"""
-    A module that solves the N queens problem
-"""
+"""challenge of placing N non-attacking queens on an N×N chessboard"""
 import sys
 
 
-def check_attack(board, arg1, i):
-    """
-        A function that checks if a position is not
-        attacked by queens in the previous rows
-    """
-    for each_arg in range(arg1):
-        if (board[each_arg] == i or
-                board[each_arg] + arg1 - each_arg == i or
-                board[each_arg] + each_arg - arg1 == i):
+def nonAttack(brd, ln, i):
+    '''checks a place is not attacked by queens'''
+    for j in range(ln):
+        if(brd[j] == i or brd[j] + ln - j == i or brd[j] + j - ln == i):
             return False
     return True
 
 
-def safe_pos(board, arg1):
-    """
-        A function that checks for safe postions
-    """
-    for i in range(len(board)):
-        if check_attack(board, arg1, i):
-            board[arg1] = i
-            if arg1 < len(board) - 1:
-                safe_pos(board, arg1 + 1)
+def fillBoard(brd, ln):
+    '''finds the next safe posn to land the queen'''
+    for i in range(len(brd)):
+        if nonAttack(brd, ln, i):
+            brd[ln] = i
+            if ln < len(brd) - 1:
+                fillBoard(brd, ln + 1)
             else:
-                print([[i, board[i]] for i in range(len(board))])
+                print([[i, brd[i]] for i in range(len(brd))])
 
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     sys.exit(1)
 try:
-    val = int(sys.argv[1])
+    n = int(sys.argv[1])
 except Exception:
     print("N must be a number")
     sys.exit(1)
-if val < 4:
+if n < 4:
     print("N must be at least 4")
     sys.exit(1)
-board = [-1 for i in range(val)]
-safe_pos(board, 0)
+brd = [-1 for i in range(n)]
+fillBoard(brd, 0)
