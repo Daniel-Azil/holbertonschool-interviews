@@ -2,13 +2,14 @@
     A module that rotates a 2D matrix clockwise in 90 degrees.
 """
 
+
 def rotate_2d_matrix(matrix):
     """
         A function that rotates a 2D matrix.
     """
     each_row = len(matrix) - 1
     each_ele = 0
-    
+
     while each_row > each_ele:
         for i in range(each_ele, each_row):
             value_tmp = matrix[i][each_row]
