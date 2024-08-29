@@ -3,6 +3,7 @@
     A module that counts given coins.
 """
 
+
 def makeChange(coins, total):
     """
         A class that calculates the minimum number of coins required to achieve
@@ -15,7 +16,7 @@ def makeChange(coins, total):
     index = 0
     sorted_coins = sorted(coins, reverse=True)
     num_coins = len(coins)
-    
+
     while remainder > 0:
         if index >= num_coins:
             return -1
