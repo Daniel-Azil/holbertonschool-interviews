@@ -3,6 +3,7 @@
 Determine the winner of the Prime Game
 """
 
+
 def get_prime_numbers(n):
     """Generates a list of prime numbers from 1 to n (inclusive)
        Args:
@@ -16,6 +17,7 @@ def get_prime_numbers(n):
             for multiple in range(num, n + 1, num):
                 sieve[multiple] = False
     return primes_list
+
 
 def isWinner(x, nums):
     """
